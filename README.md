@@ -1,24 +1,56 @@
 # Library Management System
 
-A basic hybrid project with C++ for backend logic and HTML/CSS/JS for frontend simulation, plus SQL for data persistence.
+A complete, runnable Library Management System with:
 
-## 🔧 Features
-- Add, issue, return, and view books in C++ (CLI)
-- Web interface to simulate adding books (frontend only)
-- SQL schema for persistent data storage
+- **Flask + SQLite backend API**
+- **HTML/CSS/JavaScript frontend** served by Flask
+- **C++ CLI program** for basic in-memory library operations
 
-## 🚀 Technologies Used
-- C++ (with STL and struct)
-- HTML, CSS, JavaScript
-- SQL (MySQL)
+## Features
 
-## ⚙️ How to Run (CLI)
-1. Compile and run main.cpp:
+### Web app
+- Add books
+- View all books
+- Issue / return books
+- Delete books
+- Simple status feedback for every operation
+
+### Backend API
+- `GET /health`
+- `GET /books`
+- `POST /books`
+- `POST /books/<id>/issue`
+- `POST /books/<id>/return`
+- `DELETE /books/<id>`
+
+### CLI app (C++)
+- Add, issue, return, and view books in terminal mode
+
+---
+
+## Quick Start (Web App)
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python init_db.py
+python app.py
+```
+
+Open `http://127.0.0.1:5000` in your browser.
+
+---
+
+## Run C++ CLI version
+
 ```bash
 g++ main.cpp -o library
 ./library
 ```
-2. Import `schema.sql` to your MySQL database.
 
-## 🧠 Author
-Aditya Singh
+---
+
+## Optional SQL schema
+
+`schema.sql` is included for MySQL users who want to create a similar table structure.

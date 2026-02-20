@@ -1,26 +1,130 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+:root {
+    color-scheme: light;
 }
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f3f8;
+    color: #1a1a1a;
+}
+
 .container {
-    width: 400px;
-    margin: 50px auto;
+    width: min(700px, calc(100% - 32px));
+    margin: 32px auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+.card {
     background: #fff;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 16px;
 }
-input, button {
+
+input,
+button {
     padding: 10px;
-    margin: 5px 0;
+    margin: 6px 0;
     width: 100%;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 1px solid #d6d6d6;
 }
+
 button {
     background-color: #007bff;
-    color: white;
+    color: #fff;
     border: none;
     cursor: pointer;
+    font-weight: 600;
 }
+
 button:hover {
-    background-color: #0056b3;
+    background-color: #005fcc;
+}
+
+button.secondary {
+    width: auto;
+    padding: 8px 12px;
+    background-color: #636d77;
+}
+
+button.secondary:hover {
+    background-color: #4f5760;
+}
+
+button.danger {
+    background-color: #d9534f;
+}
+
+button.danger:hover {
+    background-color: #b7403c;
+}
+
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+#feedback {
+    min-height: 24px;
+    margin: 8px 2px 14px;
+    font-weight: 600;
+}
+
+#feedback.error {
+    color: #b7403c;
+}
+
+#feedback.success {
+    color: #1e7e34;
+}
+
+.book-list {
+    display: grid;
+    gap: 10px;
+}
+
+.book-item {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 12px;
+}
+
+.book-meta {
+    margin-bottom: 10px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    margin-left: 8px;
+}
+
+.badge.available {
+    background-color: #e6f4ea;
+    color: #1e7e34;
+}
+
+.badge.issued {
+    background-color: #ffe9e9;
+    color: #b7403c;
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+}
+
+.actions button {
+    width: auto;
 }

@@ -1,15 +1,8 @@
 # Python Backend for Library Management System
 
-This is a basic Flask backend API for the Library Management System.
+This backend uses **Flask + SQLite** and serves both API endpoints and the frontend UI.
 
-## 🔧 Endpoints
-
-- `GET /books` - List all books
-- `POST /books` - Add a new book (JSON: `{ "title": "...", "author": "..." }`)
-- `POST /books/<id>/issue` - Mark a book as issued
-- `POST /books/<id>/return` - Mark a book as returned
-
-## 🚀 How to Run
+## Setup
 
 ```bash
 pip install -r requirements.txt
@@ -17,6 +10,18 @@ python init_db.py
 python app.py
 ```
 
-The backend will run on `http://127.0.0.1:5000/`.
+Server runs at `http://127.0.0.1:5000`.
 
-You can use Postman or connect the frontend via `fetch()` in JS.
+## Endpoints
+
+- `GET /health` - health check
+- `GET /books` - list books
+- `POST /books` - add a book (`{ "title": "...", "author": "..." }`)
+- `POST /books/<id>/issue` - issue a book
+- `POST /books/<id>/return` - return a book
+- `DELETE /books/<id>` - delete a book
+
+## Notes
+
+- Database file: `library.db`
+- Table initialization is automatic on app startup; `init_db.py` is included for manual initialization.
