@@ -1,19 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library Management System</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Library Management</h1>
-        <form id="bookForm">
+        <h1>📚 Library Management</h1>
+
+        <form id="bookForm" class="card">
+            <h2>Add a Book</h2>
             <input type="text" id="title" placeholder="Book Title" required>
             <input type="text" id="author" placeholder="Author" required>
             <button type="submit">Add Book</button>
         </form>
-        <div id="bookList"></div>
+
+        <div id="feedback" role="status" aria-live="polite"></div>
+
+        <section class="card">
+            <div class="header-row">
+                <h2>Books</h2>
+                <button id="refreshBtn" class="secondary" type="button">Refresh</button>
+            </div>
+            <div id="bookList" class="book-list"></div>
+        </section>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
